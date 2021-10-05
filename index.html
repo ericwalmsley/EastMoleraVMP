@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>East Molera Pivot Table- PivotTable.js</title>
+
+        <!-- external libs from cdnjs -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/d3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/c3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/export_renderers.min.js"></script>
+
+        <style>
+            body {font-family: Verdana;}
+            .node {
+              border: solid 1px white;
+              font: 10px sans-serif;
+              line-height: 12px;
+              overflow: hidden;
+              position: absolute;
+              text-indent: 2px;
+            }
+            .c3-line, .c3-focused {stroke-width: 3px !important;}
+            .c3-bar {stroke: white !important; stroke-width: 1;}
+            .c3 text { font-size: 12px; color: grey;}
+            .tick line {stroke: white;}
+            .c3-axis path {stroke: grey;}
+            .c3-circle { opacity: 1 !important; }
+            .c3-xgrid-focus {visibility: hidden !important;}
+        </style>
+    </head>
+    <body>
+        <h1>East Molera VMP </h1>
+	<script type="text/javascript">
+            $(function(){
+                if(window.location != window.parent.location)
+                    $("<a>", {target:"_blank", href:""})
+                        .text("[pop out]").prependTo($("body"));
+
+                $("#output").pivotUI(
+                    $.csv.toArrays($("#output").text()),
+                    $.extend({
+                        renderers: $.extend(
+                            $.pivotUtilities.renderers,
+                            $.pivotUtilities.c3_renderers,
+                            $.pivotUtilities.d3_renderers,
+                            $.pivotUtilities.export_renderers
+                            ),
+                        hiddenAttributes: [""]
+                    }, {})
+                ).show();
+             });
+        </script>
+        <div id="output" style="display: none;">,Aspect,FBFM13,FBFM40,gridcode,muname,WHRNAME,SNAME,Full_Name,FullName,HAZ_CLASS,acres
+0,,,,1,,,,,,,0.0005579
+1,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1064394
+2,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2478214
+3,Southeast,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0586678
+4,Southeast,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1637268
+5,Southeast,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0047141
+6,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0047732
+7,Southeast,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1022593
+8,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0773018
+9,Southeast,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1890315
+10,Southeast,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1400166
+11,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2981096
+12,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0066631
+13,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1771805
+14,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1591386
+15,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1084538
+16,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,2.18e-05
+17,Southeast,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1772047
+18,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.7081898
+19,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0080793
+20,Southeast,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0477001
+21,Southeast,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2961671
+22,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.7681468
+23,Southeast,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0031594
+24,Southeast,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0899983
+25,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0053337
+26,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.049065
+27,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0452072
+28,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1676847
+29,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0189884
+30,Southeast,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.148758
+31,Southeast,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0192652
+32,Southeast,FBFM1,GR2,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0342635
+33,Southeast,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.009626
+34,Southeast,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1140079
+35,Southeast,FBFM1,GR1,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0648656
+36,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.4098969
+37,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0004064
+38,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.014861
+39,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0094822
+40,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0330345
+41,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1837952
+42,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1375139
+43,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.2730522
+44,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2110544
+45,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.033283
+46,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.2141608
+47,Southeast,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1188551
+48,Southeast,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0325414
+49,Southeast,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0124738
+50,Southeast,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0585242
+51,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.177147
+52,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1627991
+53,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.176668
+54,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0983888
+55,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0395949
+56,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2376453
+57,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0032542
+58,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2167134
+59,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.2064411
+60,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.2223951
+61,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0547798
+62,Southwest,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0347103
+63,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.153291
+64,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.1322432
+65,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0091145
+66,Southwest,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.1712038
+67,Southwest,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0302368
+68,Southwest,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.0043365
+69,Southwest,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.1024141
+70,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0100263
+71,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,1.0858521
+72,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0002894
+73,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0073833
+74,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0084247
+75,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0329412
+76,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2356119
+77,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1548001
+78,Southwest,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0428427
+79,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.1130069
+80,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.1093883
+81,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0708587
+82,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.096783
+83,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2985694
+84,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1666952
+85,Southwest,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0104283
+86,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2128949
+87,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0238892
+88,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.186582
+89,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0749949
+90,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0155561
+91,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.3568719
+92,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0759904
+93,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1734726
+94,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0060874
+95,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.2223948
+96,Southwest,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.2223953
+97,Southwest,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.3223963
+98,Southwest,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.070062
+99,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0174099
+100,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.1867009
+101,Southwest,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.018284
+102,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0424101
+103,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0003821
+104,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.165504
+105,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.3376176
+106,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.021781
+107,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1487187
+108,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0356943
+109,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.6263335
+110,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.4084862
+111,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.010895
+112,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0174098
+113,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0463066
+114,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1760884
+115,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0072529
+116,Southwest,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0379396
+117,Southwest,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.1139216
+118,Southwest,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Valley Foothill Riparian,,Open Space Recreation,,High,0.0014254
+119,Southwest,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.4757966
+120,Southwest,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0121103
+121,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.3006227
+122,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.0910639
+123,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0506756
+124,Southwest,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0094596
+125,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.1262868
+126,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.178999
+127,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0005961
+128,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0241945
+129,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0058161
+130,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,1.052597
+131,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0247395
+132,Southwest,FBFM5,GS2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0354922
+133,Southwest,FBFM5,GS2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1361459
+134,Southwest,FBFM5,GS2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0064155
+135,Southwest,FBFM5,GS2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.0776171
+136,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0428163
+137,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0019904
+138,Southwest,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.6484396
+139,Southwest,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.5225083
+140,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0008582
+141,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0564817
+142,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1539732
+143,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0005169
+144,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0422899
+145,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0084369
+146,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0010523
+147,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0590761
+148,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0042686
+149,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.011782
+150,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0038769
+151,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0093846
+152,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.454206
+153,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.1347861
+154,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0771035
+155,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0061165
+156,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0058251
+157,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0045536
+158,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0410039
+159,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.8065022
+160,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.2223837
+161,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.266181
+162,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0758667
+163,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0120534
+164,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0069682
+165,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0061186
+166,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0649455
+167,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0021355
+168,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.004396
+169,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.00951
+170,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.160053
+171,Southwest,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.2830987
+172,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.1262839
+173,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0106322
+174,Southwest,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0003275
+175,Southwest,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.0001837
+176,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0107515
+177,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.01753
+178,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0556064
+179,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.7447394
+180,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.5317813
+181,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,1.1949903
+182,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0105419
+183,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0910638
+184,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1350333
+185,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.1867006
+186,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0428197
+187,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Annual Grassland,,Open Space Recreation,,High,0.0020043
+188,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,,Open Space Recreation,,High,0.0006042
+189,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0273544
+190,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0386686
+191,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.3312002
+192,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1142641
+193,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0003864
+194,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0520446
+195,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,1.7717873
+196,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0938389
+197,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,Very High,0.0222395
+198,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.1912521
+199,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.1703549
+200,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0205614
+201,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0021618
+202,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0041746
+203,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0213402
+204,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.1599164
+205,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.2016721
+206,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.130085
+207,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0048329
+208,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0050747
+209,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0329126
+210,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0428344
+211,South,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0428275
+212,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0910643
+213,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0121674
+214,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0053299
+215,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0903072
+216,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0115849
+217,South,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,1.0958817
+218,South,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0885794
+219,South,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0017516
+220,South,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.3211308
+221,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1861375
+222,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0333878
+223,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0121658
+224,South,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0028137
+225,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0249601
+226,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1358041
+227,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0355635
+228,South,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0334245
+229,South,FBFM2,GS1,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0131148
+230,South,FBFM2,GS1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1059919
+231,South,FBFM2,GS1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0053511
+232,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0128441
+233,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0066083
+234,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0412651
+235,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0034062
+236,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0002396
+237,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1768955
+238,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0476852
+239,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0032479
+240,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0062401
+241,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0428333
+242,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1676584
+243,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0024238
+244,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,4.01e-05
+245,Southwest,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0094483
+246,Southwest,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0452541
+247,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0004924
+248,Southwest,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.3443154
+249,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0428264
+250,South,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,3.91e-05
+251,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0118135
+252,South,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.025408
+253,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1851392
+254,South,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.1676149
+255,South,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.2223946
+256,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.002181
+257,South,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.0167833
+258,South,FBFM1,GR1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.013848
+259,South,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,0.0008858
+260,South,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,2.664947
+261,South,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.2954297
+262,South,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,,Open Space Recreation,,High,0.3780641
+263,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0855979
+264,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0164124
+265,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0101445
+266,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0628496
+267,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Barren,,Open Space Recreation,,Very High,0.0018717
+268,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0032374
+269,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0017591
+270,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0359288
+271,Southeast,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,1.71e-05
+272,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0039014
+273,Southeast,FBFM2,GS1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0007628
+274,Southeast,FBFM2,GS1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0747957
+275,Southeast,FBFM2,GS1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0311523
+276,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0024141
+277,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0095699
+278,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.1933866
+279,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0569823
+280,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0106866
+281,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0024565
+282,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0295798
+283,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0001367
+284,Southeast,FBFM1,GR2,2,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0054616
+285,Southeast,FBFM1,GR2,2,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0227219
+286,Southeast,FBFM1,GR2,2,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,4.61e-05
+287,Southeast,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.2184503
+288,Southeast,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0180591
+289,Southeast,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0093174
+290,Southeast,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0002487
+291,Southeast,FBFM1,GR1,2,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,1.13e-05
+292,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0001474
+293,Southeast,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0996969
+294,Southeast,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.0759261
+295,Southeast,FBFM5,GS2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0014908
+296,Southeast,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.104609
+297,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1054468
+298,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.000483
+299,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0084023
+300,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,,Open Space Recreation,,Very High,0.1565615
+301,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.124299
+302,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Barren,,Open Space Recreation,,Very High,0.0214515
+303,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.1791103
+304,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0058729
+305,Southeast,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0252365
+306,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0014122
+307,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.066565
+308,Southeast,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0863343
+309,Southeast,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.042852
+310,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0106264
+311,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0013228
+312,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0487428
+313,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1342859
+314,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0123307
+315,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0134535
+316,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0470229
+317,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0008048
+318,Southwest,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0002127
+319,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0059296
+320,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.3365299
+321,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1771269
+322,Southwest,Urban,NB1,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0040633
+323,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0011754
+324,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0328222
+325,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0126012
+326,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0171183
+327,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,2.17e-05
+328,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1807886
+329,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1101181
+330,Southwest,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1677022
+331,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.002252
+332,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.2126446
+333,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0003084
+334,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0094473
+335,Southeast,FBFM2,GS1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0143499
+336,Southeast,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0291554
+337,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0024271
+338,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0153291
+339,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.4080763
+340,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0146214
+341,West,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0282149
+342,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.222395
+343,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0452655
+344,West,FBFM5,SH2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0045535
+345,West,FBFM5,SH2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,5.77e-05
+346,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.5858814
+347,West,FBFM5,SH2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0005168
+348,West,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0318751
+349,West,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0090495
+350,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.9947766
+351,West,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0852505
+352,West,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0268051
+353,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2119669
+354,West,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0104283
+355,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0094996
+356,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.011924
+357,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0119283
+358,West,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0095043
+359,West,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1908798
+360,West,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.7853491
+361,West,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0425039
+362,West,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0002959
+363,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0910636
+364,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.6509152
+365,West,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.4186746
+366,West,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,1.4392657
+367,West,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.2953186
+368,West,FBFM5,SH2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.0148613
+369,West,FBFM5,GS2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0684566
+370,West,FBFM5,GS2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.3430569
+371,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.3582938
+372,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1496095
+373,West,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0190415
+374,West,FBFM5,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.3198186
+375,West,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0971912
+376,West,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2013718
+377,West,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0119406
+378,West,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1795876
+379,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.4353003
+380,West,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0119436
+381,West,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.001222
+382,West,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.0082998
+383,West,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,High,4.15e-05
+384,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.4651153
+385,West,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2390345
+386,West,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.2621656
+387,West,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1512611
+388,West,FBFM4,SH7,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Scrub,,Open Space Recreation,,High,0.015808
+389,West,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.7884488
+390,West,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1011304
+391,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0151425
+392,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0016276
+393,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0007855
+394,East,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.3792147
+395,East,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.2455484
+396,East,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0636776
+397,East,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0123752
+398,East,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0111132
+399,East,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0014979
+400,East,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.401443
+401,East,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0117557
+402,East,FBFM5,GS2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0290115
+403,East,FBFM5,GS2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0001689
+404,East,FBFM9,TL9,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0153344
+405,East,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1762361
+406,East,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0217371
+407,East,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0090865
+408,East,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.1533206
+409,East,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.7166792
+410,East,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.3288999
+411,East,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0636084
+412,East,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0098702
+413,East,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0146204
+414,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0638237
+415,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.1062207
+416,East,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.00241
+417,South,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.0335176
+418,South,FBFM8,TL3,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0052777
+419,South,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0024287
+420,South,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0169936
+421,South,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Coastal Oak Woodland,,Open Space Recreation,,High,0.058975
+422,South,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,,Open Space Recreation,,High,0.0251976
+423,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0137843
+424,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0658685
+425,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0022876
+426,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0001316
+427,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0140344
+428,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0045536
+429,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0556568
+430,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.662815
+431,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0306203
+432,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.1719671
+433,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0501384
+434,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0002895
+435,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0057207
+436,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0261492
+437,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0011728
+438,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.4721855
+439,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.3757646
+440,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.6674004
+441,Southwest,FBFM5,SH7,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0044978
+442,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0072632
+443,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0379933
+444,Southwest,FBFM5,SH2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,2.29e-05
+445,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.094269
+446,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0598722
+447,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.410686
+448,Southwest,FBFM5,SH2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,8.6e-06
+449,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0014568
+450,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0734066
+451,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2794922
+452,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.1687805
+453,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.024723
+454,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.028891
+455,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0168652
+456,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0643615
+457,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0506738
+458,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0136682
+459,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0225662
+460,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0035169
+461,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0055349
+462,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0520177
+463,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.1060457
+464,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0643319
+465,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0001377
+466,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0045537
+467,Southwest,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.009376
+468,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.2082861
+469,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,4.08e-05
+470,Southwest,FBFM1,GR1,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0297871
+471,Southwest,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0150756
+472,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.4086996
+473,Southwest,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0174124
+474,Southwest,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.479436
+475,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.2218183
+476,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.000529
+477,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,4.73e-05
+478,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0101516
+479,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.167013
+480,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0904954
+481,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.476764
+482,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1335823
+483,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,High,0.0043964
+484,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0751732
+485,Southwest,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Resource Conservation,,High,0.0032824
+486,Southwest,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0024005
+487,Southwest,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.0427835
+488,Southwest,Urban,NB1,1,"Xerorthents, dissected",Urban,,Open Space Recreation,,High,0.0189022
+489,Southwest,Urban,NB1,1,"Xerorthents, dissected",Urban,,Resource Conservation,,High,0.0196219
+490,Southwest,Urban,NB1,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0499577
+491,Southwest,Urban,NB1,1,"Xerorthents, dissected",Coastal Oak Woodland,,Resource Conservation,,High,0.0104247
+492,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0428417
+493,Southwest,FBFM5,SH2,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.0004076
+494,Southwest,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0046265
+495,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Mixed Chaparral,,Open Space Recreation,,High,0.0016976
+496,Southwest,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0026867
+497,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Mixed Chaparral,,Open Space Recreation,,High,0.0084169
+498,Southwest,FBFM5,SH2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0033592
+499,Southwest,FBFM5,SH2,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.0452893
+500,Southwest,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0033591
+501,Southwest,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.006049
+502,Southwest,FBFM5,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Mixed Chaparral,,Open Space Recreation,,High,0.1514668
+503,Southwest,FBFM5,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.1395987
+504,Southwest,FBFM5,SH7,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.1396462
+505,Southwest,FBFM5,SH7,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.5813663
+506,Southwest,FBFM4,SH7,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0584575
+507,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0897903
+508,Southwest,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0765493
+509,Southwest,Urban,NB1,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.0004657
+510,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Mixed Chaparral,,Open Space Recreation,,High,0.0019399
+511,Southwest,FBFM8,TL3,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0417229
+512,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0114399
+513,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.212596
+514,Southwest,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.041664
+515,Southwest,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0803451
+516,Southwest,FBFM5,GS2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0452192
+517,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0255114
+518,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.012446
+519,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0048581
+520,Southwest,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0848642
+521,Southwest,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.062542
+522,Southwest,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.006552
+523,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0079091
+524,Southeast,FBFM4,SH7,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0014924
+525,Southeast,FBFM5,GS2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.1493367
+526,Southeast,FBFM5,GS2,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0278385
+527,Southeast,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.1178403
+528,Southeast,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.0309044
+529,Southeast,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.019041
+530,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0355727
+531,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.0028512
+532,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0048593
+533,Southeast,FBFM9,TL2,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0447561
+534,Southeast,FBFM9,TL9,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0023993
+535,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0001239
+536,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.041649
+537,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0076544
+538,South,FBFM9,TL9,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0100265
+539,South,FBFM9,TL9,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0114396
+540,South,FBFM9,TL9,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.106267
+541,South,FBFM8,TL3,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0239895
+542,South,FBFM8,TL3,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0651766
+543,South,FBFM8,TL3,2,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.1559058
+544,South,FBFM8,TL3,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.000721
+545,South,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0506366
+546,South,FBFM8,TL3,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0184625
+547,South,FBFM8,TL3,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0870563
+548,South,Urban,NB1,2,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0090862
+549,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0296989
+550,South,Urban,NB1,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0517003
+551,South,Urban,NB1,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0819505
+552,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.1624855
+553,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.038579
+554,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0051923
+555,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0042703
+556,South,FBFM2,GS1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0080311
+557,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0057637
+558,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0033193
+559,South,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0002895
+560,South,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0024447
+561,South,FBFM1,GR1,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.0100475
+562,South,FBFM1,GR1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0111944
+563,South,FBFM5,SH2,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.1771763
+564,South,FBFM4,SH7,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.0615688
+565,South,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0182862
+566,South,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.1425398
+567,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0524273
+568,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0201786
+569,South,FBFM1,GR1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0789101
+570,South,FBFM1,GR1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0708788
+571,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0246686
+572,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0007605
+573,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.014266
+574,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0469379
+575,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0183387
+576,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1345627
+577,South,FBFM5,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,9.65e-05
+578,South,FBFM5,SH7,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0103319
+579,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,3.3e-06
+580,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.1661959
+581,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.1605144
+582,South,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0372993
+583,South,FBFM5,SH2,1,Xererts-Xerolls complex,Mixed Chaparral,,Open Space Recreation,,High,0.0321408
+584,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.1435365
+585,South,FBFM5,SH2,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0767449
+586,South,FBFM5,SH2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Mixed Chaparral,,Open Space Recreation,,High,0.2027877
+587,South,FBFM5,SH2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.1071873
+588,South,FBFM5,SH2,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.0007142
+589,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0002894
+590,South,FBFM5,GS2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0027044
+591,South,FBFM5,GS2,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0629434
+592,South,FBFM5,GS2,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.1139208
+593,South,FBFM5,SH2,2,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0091073
+594,South,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.1051143
+595,South,FBFM5,SH2,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0987648
+596,South,FBFM5,SH7,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0136607
+597,South,FBFM5,SH7,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0182148
+598,South,FBFM5,SH7,3,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0455366
+599,South,FBFM5,SH7,2,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.1047889
+600,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0101492
+601,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0603201
+602,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0530838
+603,South,FBFM5,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Mixed Chaparral,,Open Space Recreation,,High,0.0111957
+604,South,FBFM5,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.2971828
+605,South,FBFM5,SH7,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.0002876
+606,South,FBFM5,SH7,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.2348129
+607,South,FBFM5,SH7,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.1402359
+608,South,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.1411317
+609,South,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0428235
+610,South,FBFM4,SH7,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0266357
+611,South,Urban,NB1,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,0.022575
+612,South,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0021355
+613,South,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Mixed Chaparral,,Open Space Recreation,,High,0.0331495
+614,South,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0197203
+615,South,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.2213363
+616,South,Urban,NB1,1,"Xerorthents, dissected",Mixed Chaparral,,Open Space Recreation,,High,7.7e-06
+617,South,Urban,NB1,1,Xererts-Xerolls complex,Mixed Chaparral,,Open Space Recreation,,High,0.0829592
+618,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0016351
+619,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0563127
+620,South,FBFM4,SH7,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0044454
+621,South,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0096061
+622,South,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1546693
+623,South,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Redwood,,Open Space Recreation,,High,0.0175989
+624,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0139758
+625,South,FBFM4,SH7,1,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0094208
+626,South,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0099473
+627,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0005552
+628,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0112241
+629,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.03658
+630,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0520029
+631,South,FBFM9,TL9,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.000108
+632,South,FBFM9,TL9,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0766786
+633,South,FBFM8,TL3,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0139539
+634,South,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.030832
+635,South,FBFM8,TL3,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0004656
+636,South,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0048468
+637,South,Urban,NB1,1,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0069144
+638,South,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.03796
+639,South,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0048562
+640,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0069074
+641,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Urban,,Resource Conservation,,High,0.0023143
+642,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.027157
+643,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.0006631
+644,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Open Space Recreation,,High,0.0004704
+645,South,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.006329
+646,South,FBFM9,TL2,1,"Fluvents, stony",Urban,,Open Space Recreation,,High,0.007712
+647,South,FBFM9,TL2,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.4265059
+648,South,FBFM9,TL9,2,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0877901
+649,South,FBFM9,TL9,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.1322053
+650,South,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0007629
+651,South,FBFM9,TL9,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.008668
+652,South,Urban,NB1,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.0502396
+653,South,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.3953639
+654,South,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.1895668
+655,South,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Resource Conservation,,High,0.0624966
+656,South,Urban,NB1,1,"Xerorthents, dissected",Urban,,Open Space Recreation,,High,0.068859
+657,South,Urban,NB1,1,"Xerorthents, dissected",Urban,,Resource Conservation,,High,0.0461186
+658,South,Urban,NB1,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0122349
+659,South,FBFM1,GR1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0063879
+660,South,FBFM1,GR1,1,Xererts-Xerolls complex,Mixed Chaparral,,Open Space Recreation,,High,0.0056622
+661,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0468941
+662,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.01901
+663,West,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0117634
+664,West,FBFM8,TL3,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,4.19e-05
+665,West,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0790492
+666,West,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Resource Conservation,,High,0.0786294
+667,West,Urban,NB1,1,"Xerorthents, dissected",Coastal Oak Woodland,,Open Space Recreation,,High,0.0002401
+668,West,Urban,NB1,1,"Xerorthents, dissected",Coastal Oak Woodland,,Resource Conservation,,High,1.54e-05
+669,East,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0092954
+670,East,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0023972
+671,East,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0189562
+672,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0003614
+673,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Urban,,Resource Conservation,,High,0.0041866
+674,Southeast,FBFM9,TL2,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0033539
+675,Southeast,FBFM9,TL2,1,"Fluvents, stony",Urban,,Open Space Recreation,,High,0.0030303
+676,Southeast,FBFM9,TL2,1,"Fluvents, stony",Urban,,Resource Conservation,,High,0.0002028
+677,Southeast,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Urban,,Resource Conservation,,High,0.0254584
+678,Southeast,Urban,NB1,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0138671
+679,Southeast,Urban,NB1,1,"Fluvents, stony",Urban,,Open Space Recreation,,High,0.0008418
+680,Southeast,Urban,NB1,1,"Fluvents, stony",Urban,,Resource Conservation,,High,0.0107508
+681,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0081365
+682,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.2306
+683,Southwest,Urban,NB1,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.0766825
+684,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0298127
+685,Southwest,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.233729
+686,Southwest,FBFM5,SH7,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.1243225
+687,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0033584
+688,Southwest,FBFM4,SH7,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Redwood,,Open Space Recreation,,High,0.004557
+689,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0014938
+690,Southwest,FBFM8,TL3,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0073204
+691,Southwest,FBFM8,TL3,2,"Los Osos clay loam, 15 to 30 percent slopes, cool",Redwood,,Open Space Recreation,,High,0.0432609
+692,Southwest,FBFM8,TL3,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0022591
+693,Southwest,FBFM8,TL3,2,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0046579
+694,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,High,0.0344277
+695,Southwest,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Redwood,,Open Space Recreation,,High,0.0127338
+696,Southwest,FBFM8,TL3,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.010699
+697,Southwest,FBFM8,TL3,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.022906
+698,Southwest,FBFM8,TL3,1,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0153079
+699,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Redwood,,Open Space Recreation,,High,0.0009457
+700,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.4300959
+701,Southwest,FBFM9,TL2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0882308
+702,Southwest,FBFM9,TL2,1,"Fluvents, stony",Urban,,Open Space Recreation,,High,0.0004067
+703,Southwest,FBFM9,TL2,1,"Fluvents, stony",Coastal Oak Woodland,,Open Space Recreation,,High,0.3571798
+704,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0054915
+705,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0405729
+706,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0268597
+707,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0706411
+708,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,High,0.0004216
+709,Southeast,FBFM8,TL3,1,"Los Osos clay loam, 15 to 30 percent slopes, cool",Valley Foothill Riparian,,Resource Conservation,,High,0.0008971
+710,Southeast,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0024104
+711,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.2219217
+712,Southeast,FBFM4,SH7,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.0004734
+713,Southeast,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.00726
+714,Southeast,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0379744
+715,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1078737
+716,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0893405
+717,Southeast,FBFM4,SH7,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0133632
+718,Southeast,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1771813
+719,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.452034
+720,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0411973
+721,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.5188349
+722,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0182865
+723,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2206495
+724,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2230698
+725,Southeast,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.136437
+726,Southeast,FBFM1,GR1,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.988565
+727,Southeast,FBFM1,GR1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.2444326
+728,Southeast,FBFM5,SH2,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.0452185
+729,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2081344
+730,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0285058
+731,Southeast,FBFM5,GS2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.042826
+732,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0072605
+733,Southeast,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0379797
+734,Southeast,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.3800038
+735,Southeast,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0096591
+736,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1353772
+737,Southeast,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1421452
+738,Southeast,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0165481
+739,Southeast,FBFM9,TL9,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0286979
+740,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0036329
+741,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Resource Conservation,,High,0.0012575
+742,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0247771
+743,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.2874042
+744,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,High,0.0018765
+745,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,Very High,0.0161571
+746,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0535661
+747,Southeast,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Resource Conservation,,Very High,0.0083742
+748,Southeast,Urban,NB1,1,"Xerorthents, dissected",Annual Grassland,,Open Space Recreation,,Very High,0.1572628
+749,Southeast,Urban,NB1,1,"Xerorthents, dissected",Urban,,Open Space Recreation,,Very High,0.0532645
+750,Southeast,Urban,NB1,1,"Xerorthents, dissected",Urban,,Resource Conservation,,Very High,0.015792
+751,Southeast,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,High,0.0700519
+752,Southeast,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Open Space Recreation,,Very High,0.0287746
+753,Southeast,Urban,NB1,1,"Xerorthents, dissected",Coastal Scrub,,Resource Conservation,,High,0.0222805
+754,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0036107
+755,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.042172
+756,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0027134
+757,South,FBFM1,GR2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0121058
+758,South,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0826536
+759,South,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0061782
+760,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1190382
+761,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0072653
+762,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0380044
+763,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.3230366
+764,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0217148
+765,South,FBFM4,SH7,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0699712
+766,South,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1495559
+767,South,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0271186
+768,South,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0439501
+769,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.7382145
+770,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0788951
+771,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2557581
+772,South,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,,Open Space Recreation,,Very High,0.0142026
+773,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0155591
+774,South,FBFM5,GS2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0452753
+775,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1789476
+776,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0006548
+777,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2223943
+778,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2223947
+779,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.036399
+780,South,FBFM5,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1859958
+781,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0452147
+782,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0365939
+783,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0896126
+784,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0449451
+785,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0060235
+786,South,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0101568
+787,South,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.00734
+788,South,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.3821003
+789,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.432634
+790,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.4569444
+791,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.222395
+792,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0054696
+793,South,FBFM5,SH7,2,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0045537
+794,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.2787226
+795,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.8232065
+796,South,FBFM5,SH2,2,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0091072
+797,South,FBFM5,SH2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.1149607
+798,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0530702
+799,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.352319
+800,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0447698
+801,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0476605
+802,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1435161
+803,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.4099399
+804,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.028796
+805,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0397028
+806,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0524728
+807,South,FBFM5,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0379626
+808,South,FBFM5,SH2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1212399
+809,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.1011559
+810,South,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0452161
+811,South,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,2.2971289
+812,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.2380283
+813,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.690398
+814,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.2771046
+815,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.208054
+816,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.0072597
+817,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0379706
+818,South,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0182845
+819,South,FBFM2,GS1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.0936944
+820,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0167049
+821,South,FBFM5,SH2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0379435
+822,South,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0452321
+823,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1252327
+824,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Oak Woodland,,Open Space Recreation,,Very High,0.0519217
+825,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,1.066064
+826,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.1363562
+827,South,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,3.0169351
+828,South,FBFM1,GR2,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,1.2833935
+829,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,High,0.1022592
+830,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.0749221
+831,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0024102
+832,South,FBFM1,GR1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0904116
+833,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.0024215
+834,South,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0053352
+835,South,Urban,NB1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0945196
+836,South,FBFM5,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,8.3e-05
+837,South,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0045536
+838,South,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0790208
+839,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.1421765
+840,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0431269
+841,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,,Open Space Recreation,,Very High,0.0270916
+842,South,FBFM4,SH7,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1795752
+843,South,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.1269701
+844,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.0954246
+845,South,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.0561023
+846,South,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,,Open Space Recreation,,Very High,0.1277329
+847,South,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,,Open Space Recreation,,Very High,0.4489563
+848,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0091074
+849,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0095836
+850,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Resource Conservation,,Very High,0.0003126
+851,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.0037646
+852,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0036596
+853,South,Urban,NB1,2,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.0327697
+854,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0235677
+855,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,Very High,0.1113857
+856,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0021838
+857,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.2163234
+858,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Resource Conservation,,Very High,0.0423899
+859,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,High,0.0491816
+860,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Open Space Recreation,,Very High,0.0068654
+861,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Urban,,Resource Conservation,,High,0.0055635
+862,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.1944062
+863,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.5703105
+864,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,High,0.0119596
+865,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Open Space Recreation,,High,0.3555323
+866,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Coastal Scrub,,Resource Conservation,,High,0.0002736
+867,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,High,0.2713174
+868,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Open Space Recreation,,Very High,0.5375113
+869,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,High,0.0003399
+870,South,Urban,NB1,1,"Los Osos clay loam, 30 to 50 percent slopes, cool",Annual Grassland,,Resource Conservation,,Very High,0.0039751
+871,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0545483
+872,East,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0092482
+873,East,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.2076094
+874,East,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,Carex obispoensis,Open Space Recreation,,Very High,0.0013402
+875,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0159541
+876,Southwest,FBFM2,GS1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.1516465
+877,Southwest,FBFM2,GS1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0173188
+878,Southwest,FBFM2,GS1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0209272
+879,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0622324
+880,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0032767
+881,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0128785
+882,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0009127
+883,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0071053
+884,Southwest,FBFM1,GR2,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0828522
+885,Southwest,FBFM1,GR2,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.5021033
+886,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.2864823
+887,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.014282
+888,Southwest,Urban,NB1,1,"Lockwood channery loam, 2 to 9 percent slopes, MLRA 14",Urban,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.0868901
+889,Southwest,Urban,NB1,1,"Santa Ynez fine sandy loam, 2 to 9 percent slopes",Annual Grassland,Cirsium occidentale var. compactum,Open Space Recreation,,High,0.1450195
+890,Southeast,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.1418593
+891,Southeast,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0083646
+892,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0982665
+893,Southeast,Urban,NB1,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.1751163
+894,Southeast,Urban,NB1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0137418
+895,Southeast,FBFM1,GR2,2,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0075213
+896,Southeast,FBFM1,GR2,2,"Gazos silt loam, 15 to 30 percent slopes",Barren,Carex obispoensis,Open Space Recreation,,Very High,5.65e-05
+897,Southeast,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0441995
+898,Southeast,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,Carex obispoensis,Open Space Recreation,,Very High,0.0348126
+899,Southeast,FBFM1,GR1,2,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.019769
+900,Southeast,FBFM1,GR1,2,"Gazos silt loam, 15 to 30 percent slopes",Barren,Carex obispoensis,Open Space Recreation,,Very High,0.0127168
+901,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,1.0850369
+902,Southeast,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Barren,Carex obispoensis,Open Space Recreation,,Very High,0.0324751
+903,Southeast,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0022278
+904,Southeast,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0010715
+905,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0151136
+906,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0053545
+907,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.1036099
+908,Southwest,FBFM1,GR2,2,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0814503
+909,Southwest,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0160086
+910,Southwest,FBFM4,SH7,2,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0031192
+911,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0416715
+912,Southwest,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0340228
+913,South,FBFM9,TL2,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.000172
+914,Southeast,FBFM9,TL2,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0006544
+915,Southeast,Urban,NB1,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.001151
+916,Southeast,Urban,NB1,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0150917
+917,Southwest,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0038468
+918,Southwest,FBFM9,TL2,1,Xererts-Xerolls complex,Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0205742
+919,Southwest,FBFM9,TL2,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0097464
+920,Southwest,FBFM9,TL2,1,"Fluvents, stony",Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0553793
+921,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.117832
+922,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Urban,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0299485
+923,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Annual Grassland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0237556
+924,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0053603
+925,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Urban,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0138062
+926,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.1646946
+927,Southwest,Urban,NB1,1,Xererts-Xerolls complex,Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0394564
+928,Southwest,Urban,NB1,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0073458
+929,Southwest,Urban,NB1,1,"Fluvents, stony",Urban,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0211596
+930,Southwest,Urban,NB1,1,"Fluvents, stony",Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Open Space Recreation,,High,0.0450519
+931,Southwest,Urban,NB1,1,"Fluvents, stony",Coastal Oak Woodland,Malacothamnus palmeri var. lucianus,Resource Conservation,,High,0.0461868
+932,South,FBFM4,SH7,1,Xererts-Xerolls complex,Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0071488
+933,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0186749
+934,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0003975
+935,South,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.1830248
+936,South,FBFM5,GS2,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0308391
+937,South,FBFM5,GS2,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0566158
+938,South,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0481699
+939,South,FBFM4,SH7,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0009189
+940,South,FBFM4,SH7,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.2546854
+941,South,FBFM1,GR2,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0155198
+942,South,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.04771
+943,South,FBFM1,GR2,1,Xererts-Xerolls complex,Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0085493
+944,South,FBFM1,GR2,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0050715
+945,South,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0043543
+946,South,FBFM1,GR1,1,"Gazos silt loam, 15 to 30 percent slopes",Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0291956
+947,South,FBFM1,GR1,1,Xererts-Xerolls complex,Coastal Scrub,Carex obispoensis,Open Space Recreation,,Very High,0.0973883
+948,South,FBFM1,GR1,1,Xererts-Xerolls complex,Annual Grassland,Carex obispoensis,Open Space Recreation,,Very High,0.0110662
+</div>
+    </body>
+</html>
